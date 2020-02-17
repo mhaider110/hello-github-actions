@@ -1,11 +1,17 @@
-name: A workflow for my Hello World file
+name: CI Workflow
 on: push
 jobs:
   build:
-    name: Hello world action
+    name: checkout master
     runs-on: ubuntu-latest    
     steps:
     - uses: actions/checkout@v1
     - uses: ./action-a
       env:
         MY_NAME: "Mona"
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - run: npm install
+    - run: npm test
