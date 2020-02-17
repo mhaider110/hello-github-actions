@@ -9,3 +9,6 @@ it('this is second test-case', function() {
 it('this is third test-case', function() {
     expect(1+2+1+1).to.eq(5)
 });
+it('this is fourth test-case', function() {
+    expect(1+2+1+1+1).to.eq(7)
+});
